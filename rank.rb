@@ -5,6 +5,10 @@ class Rank
     @scores[player.name] = player.score
   end
 
+  def self.remove(player)
+    @scores.delete(player.name)
+  end
+
   def self.scores
     @scores
   end
