@@ -10,7 +10,7 @@ class Rank
   end
 
   def self.scores
-    @scores
+    Hash[@scores.sort_by {|key, score| -score}]
   end
 end
 

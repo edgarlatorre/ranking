@@ -28,4 +28,21 @@ describe Rank do
 
     expect(Rank.scores).to eq({})
   end
+
+  it "scores should be sort by score descending" do
+    player2 = Player.new('Test2', 100)
+    player3 = Player.new('Test3', 5)
+
+    Rank.add(player)
+    Rank.add(player2)
+    Rank.add(player3)
+
+    sorted_score = {
+      player2.name => player2.score,
+      player.name => player.score,
+      player3.name => player3.score
+    }
+
+    expect(Rank.scores).to eq(sorted_score)
+  end
 end
